@@ -1,2 +1,3 @@
-# flavour_fusion_web_app
+# Flavour Fusion web app
 cooking blog web site
+for KHNURE
