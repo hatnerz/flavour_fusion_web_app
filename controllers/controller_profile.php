@@ -100,4 +100,19 @@ class Controller_Profile extends Controller
             $this->view->generate('profile_view.php', 'template_view.php', $data);
         }
     }
+
+    function action_logout()
+    {        
+        if(!isset($_SESSION["user"])) {
+            header("Location: /login");
+            exit();
+        }
+        else {
+            unset($_SESSION["user"]);
+            $data = array();
+            $data = Meta::add_meta_data($data, "Профіль", null, "Ви успішно вийшли з аккаунту");
+            $this->view->generate('login_view.php', 'template_view.php', $data);
+        }
+
+    }
 }
