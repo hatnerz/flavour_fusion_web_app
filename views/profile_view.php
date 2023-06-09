@@ -31,13 +31,23 @@
 
                         <div class="profile-main__posts">
                         <h2 class="profile-main__title">Статті та рецепти</h2>
-                        <button onclick="redirectToPage()" class = "posts__add-post form__submit-button" >Додати статтю</button>
+                        <button onclick="redirectToPage()" class = "posts__add-post form__submit-button">Додати статтю</button>
                         <script>
                             function redirectToPage() {
                                 window.location.href = "/addrecipe";
                             }
                         </script>
                         </div>
+
+                        <h2 style = "margin-top: 40px" class="profile-main__title">Авторизація</h2>
+                        <button onclick="logOut()" class = "posts__add-post form__submit-button">Вийти з аккаунту</button>
+                        <script>
+                            function logOut() {
+                                window.location.href = "/profile/logout";
+                            }
+                        </script>
+
+
 
                     </div>
 
@@ -61,6 +71,7 @@
                                 <div class="change-profile-info-form__block">
                                     <input value = "Змінити інформацію" type="submit" class="form__submit-button change-profile-info-form__submit">
                                 </div>
+                                
                             </form>
                         </div>
 

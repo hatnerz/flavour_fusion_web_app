@@ -21,6 +21,7 @@ class Controller_Recipe extends Controller
     {
         $data = $this->model->get_data();
         $data = Meta::add_meta_data($data, $data["article"]["title"], null, null);
+        $this->model->add_view();
         $this->view->generate('recipe_view.php', 'template_view.php', $data);
     }
     
