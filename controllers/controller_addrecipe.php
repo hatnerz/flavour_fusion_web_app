@@ -10,7 +10,7 @@ class Controller_Addrecipe extends Controller
 
     function action_index()
     {
-        $data = array();
+        $data = $this->model->get_categories();
         $data = Meta::add_meta_data($data, "Додавання рецепту", null, null);
         $this->view->generate('addrecipe_view.php', 'template_view.php', $data);
     }

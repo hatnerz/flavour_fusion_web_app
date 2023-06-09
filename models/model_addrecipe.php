@@ -39,6 +39,13 @@ class Model_Addrecipe extends Model
         $fileName = $post_img['name'];
         $fileTmpPath = $post_img['tmp_name'];
         move_uploaded_file($fileTmpPath, $post_img_dir.$fileName);
+    }
 
+    function get_categories() {
+        $result = DB::do_sql_select("SELECT * FROM `category` WHERE `name` <> 'Усі'");
+        $categories = DB::convert_result_to_array($result);
+        return array_combine(
+            array("categories"),
+            array($categories));
     }
 }

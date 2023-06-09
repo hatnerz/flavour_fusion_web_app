@@ -21,22 +21,22 @@
                     </div>
 
                     <div style="padding: 5px 30px" class="duration-input">
-                        <label for="duration-input__input">Час приготування (хв)</label>
-                        <input required name = "duration" id = "duration-input__input" type="number">
+                        <label for="duration-input__input" >Час приготування (хв)</label>
+                        <input min="0" max="100" required name = "duration" id = "duration-input__input" type="number">
                     </div>
 
                     <div style="padding: 5px 30px" class="complexity-input">
                         <label for="complexity-input__input">Складність приготування</label>
-                        <input required name = "complexity" id = "complexity-input__input" type="number">
+                        <input min="1" max="5" required name = "complexity" id = "complexity-input__input" type="number">
                     </div>
 
                     <div style="padding: 5px 30px" class="category-input">
                         <p>Категорія</p>
                         <select required name="category">
-                            <option value="2">Десерт</option>
-                            <option value="3" selected>Риба</option>
-                            <option value="4">Піца</option>
-                            <option value="5">М'ясо</option>
+                            <?php foreach($categories as $category) { ?>
+                                
+                                <option value= <?= $category["category_id"] ?> > <?= $category["name"] ?> </option> 
+                            <?php } ?>
                         </select>
                     </div>
                     
