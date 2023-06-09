@@ -36,6 +36,16 @@ else
 
 DB::disconnect_from_db($connection);
 
+
+
+
+
+
+
+
+
+
+
 /*$res = mysqli_query($connection, "SELECT `ip`, `count` FROM `list_ip_count` WHERE (`ip`=\"$ip\")"); 
 $row = mysqli_num_rows($res);
 

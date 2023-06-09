@@ -48,7 +48,7 @@ class PageTemplate
                                 <p class="header__icons-text">Інгредієнти</p>
                             </div>
                         </a>
-                        <a class="header__user-profile-link" href="/login">
+                        <a class="header__user-profile-link" href= <?php if($user == null) echo "/login"; else echo "/profile" ?>>
                             <div class="header__user-profile">
                                 <div class="header__icon-container">
                                     <img src="/../media/user_profile.png" alt="Profile" class="header__user-profile-img">
@@ -119,8 +119,11 @@ class PageTemplate
         <footer class="footer">
             <div class="container">
                 <div class="footer__inner">
-                    <div class="footer__text">
-                        <span>© FLAVOUR FUSION 2023</span>
+                    <div class="footer__text" style="text-align:center">
+                        <div>© FLAVOUR FUSION 2023</div>
+                        <div>Nauky Ave. 14, Kharkiv</div>
+                        <div>flavourfusion@gmail.com</div>
+                        <div>Кулінарний блог</div>
                     </div>
                     <img src="/../php/count-user.php">
                 </div>

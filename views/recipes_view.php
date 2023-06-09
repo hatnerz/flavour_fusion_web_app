@@ -1,12 +1,12 @@
 <section class="blog">
     <div class="container">
-        <div class="blog_inner container__inner_shadow">
+        <div class="blog__inner container__inner_shadow">
             <div class="title">
                 <div class="title__main">
                     <h1>Рецепти</h1>
                 </div>
                 <div class="title__subtitle">
-                    Найкращі рецепти для дбайливих домогосподарок
+                    Тільки найращі рецепти
                 </div>
             </div>
             <div class="categories">
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="post__additional-info">
                                     <div class="post__stats">
-                                        <div class="post-info post-info__likes">♡ 5</div>
+                                        <div class="post-info post-info__likes">♡ 0</div>
                                         <div class="post-info post-info__comments">👁 <?=$recipe["views"]?></div>
                                     </div>
                                     <div class="post-info date"><?=$recipe["date"]?></div>

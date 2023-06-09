@@ -32,6 +32,20 @@ class DB {
         return $result;
     }
 
+    public static function do_sql_with_id($sql_expression, $sql_params = array()) {
+        $connection = self::connect_to_db();
+        $param_types = "";
+        foreach ($sql_params as $param) {
+        $param_types .= gettype($param)[0];
+        }
+        $stmt = mysqli_prepare($connection, $sql_expression);
+        mysqli_stmt_bind_param($stmt, $param_types, ...$sql_params);
+        $result = mysqli_stmt_execute($stmt);
+        $lastInsertedId = mysqli_insert_id($connection);
+        self::disconnect_from_db($connection);
+        return $lastInsertedId;
+        }
+
     public static function do_sql_select($sql_expression, $sql_params = array()) {
         $connection = self::connect_to_db();
         $param_types = "";

@@ -1,0 +1,987 @@
+body {
+    font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+    color: #111111;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+* {
+    font-size: 16px;
+}
+
+
+.container {
+    padding: 0px 10px;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container__inner_shadow {
+    min-height: 80vh;
+    background-color: white;
+    box-shadow: 0px 0px 50px 3px rgba(7, 28, 75, 60%);
+}
+
+
+
+
+/* HEADER */
+
+.header {
+    padding: 10px 0;
+    /* */
+    border-bottom: #111111 1px solid;
+    background-color: rgb(224, 255, 224);
+}
+
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.header__icon-container {
+    width: 45px;
+}
+.header__basket-img {
+    width: 100%;
+}
+
+.header__basket-link {
+    text-decoration: none;
+    color: black;
+}
+
+.header__user-profile-link {
+    text-decoration: none;
+    color: black;
+}
+
+.header__user-profile-img {
+    width: 100%;
+}
+
+
+
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header__icons-text {
+    font-size: 14px;
+}
+
+.header__basket {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header__user-profile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.basket__recipes-link {
+    border: 2px solid green;
+    text-decoration: none;
+    color: green;
+    font-weight: 600;
+    padding: 5px;
+    margin-top: 5px;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.basket__recipes-link:hover {
+    color:rgb(46, 196, 46);
+    border: 2px solid rgb(46, 196, 46);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo__img-container {
+    width: 50px;
+    
+}
+
+.logo__img {
+    width: 100%;
+}
+
+.logo__title {
+    font-size: 24px;
+}
+
+.logo__subtitle {
+    margin-top: -5px;
+}
+
+.logo__link {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+/* NAV */
+
+.nav {
+    background: rgb(245, 255, 245);
+    border-bottom: #111111 1px solid;
+    position: relative;
+}
+
+.nav__main-menu {
+    display: flex;
+}
+
+.nav__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-menu__element {
+    padding: 5px 10px;
+    border-right: black 1px solid;
+}
+
+.main-menu__element_first {
+    border-left: 1px black solid;
+}
+
+
+.main-menu__link {
+    margin: auto;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.main-menu__link-active {
+    color: white;
+}
+
+.main-menu__element-active {
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+
+.main-menu__element:hover {
+    transition: all 0.2s;
+    font-weight: 700;
+}
+
+
+.search {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-left: black 1px solid;
+    border-right: black 1px solid;
+}
+
+.search__input {
+    height: 100%;
+    border: 0px;
+}
+
+.search__icon {
+    padding: 5px;
+    height: 70%;
+}
+
+
+
+/* BLOG */
+
+.blog {
+    background: rgb(236, 236, 236);
+}
+
+
+.categories {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.category {
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px black solid;
+    
+}
+
+.category_active {
+    color: white;
+    background: rgb(59, 59, 59);
+    border: 1px rgb(59, 59, 59) solid;
+}
+
+.category__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.title {
+    padding: 30px;
+}
+
+.title__main {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.title__subtitle {
+    font-size: 22px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+/* POSTS (RECIPES ALL)*/
+
+.posts {
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.posts__item {
+    box-shadow: 0px 0px 50px 3px rgba(7, 28, 75, 20%);
+    flex-grow: 1;
+    min-width: 200px;
+    max-width: 380px;
+    transition: all 0.3s;
+}
+
+.posts__item:hover {
+    box-shadow: 1px 1px 30px 3px rgba(3, 158, 28, 40%);
+}
+
+.post__reference {
+    text-decoration: none;
+    color: black;
+}
+
+.post__img-container {
+    height: 200px;
+    overflow: hidden;
+}
+
+.post__img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+}
+
+.post__title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.post__description {
+    padding: 10px;
+}
+
+.post__sub-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post__additional-info {
+    justify-content: space-between;
+    display: flex;
+    gap: 20px;
+}
+
+
+.post__stats {
+    justify-content: space-between;
+    display: flex;
+    gap: 15px;
+}
+
+
+/* PAGES (RECIPES ALL) */
+
+
+.pages-list {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding-bottom: 10px;
+}
+
+.pages-list__page {
+    padding: 2px;
+    width: 23px;
+    text-align: center;
+    border: 1px black solid;
+}
+
+.pages-list__link {
+    text-decoration: none;
+    color: black;
+}
+
+.pages-list__page_active {
+    color: white;
+    background: rgb(59, 59, 59);
+    border: 1px rgb(59, 59, 59) solid;
+}
+
+.pages-list__link {
+    color: inherit;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: gray;
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__text {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* RECIPE (POST) */
+
+
+.cooking {
+    padding: 30px 30px;
+}
+
+.cooking__title {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.cooking__title::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background-color: rgb(196, 196, 196);
+}
+.cooking-step {
+    display: flex;
+    position: relative;
+    padding-bottom: 15px;
+    margin: 20px 0px;
+    border-bottom: rgb(196, 196, 196) 2px solid;
+}
+
+
+
+.cooking-step__img {
+    width: 100%;
+}
+
+.cooking-step__img-container {
+    flex-grow: 2;
+    width: 0px;
+    max-width: 400px;
+}
+
+.cooking-step__text {
+    flex-grow: 3;
+    width: 0px;
+}
+
+.ingredients {
+    padding-left: 30px;
+}
+
+
+
+/* COMMENTS */
+
+.comments {
+    padding: 0px 30px 30px 30px;
+
+}
+
+.comments__title {
+    margin-bottom: 15px;
+}
+
+.comment {
+    margin-top: 25px;
+    padding: 7px;
+    box-shadow: 0px 0px 15px 3px rgba(7, 28, 75, 20%);
+}
+
+.comment__head {
+    padding: 10px;
+}
+.comment__author {
+    font-weight: 700;
+}
+
+.comment__date {
+    color:rgb(83, 83, 83);
+}
+
+.comment__body {
+    padding: 10px;
+}
+
+.form-add-comment__title {
+    margin-bottom: 10px;
+}
+
+.form-add-comment {
+    padding: 15px;
+    border: 1px solid rgb(185, 185, 185);
+    margin-bottom: 25px;
+}
+
+.form-add-comment__name-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-add-comment__name {
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+    background-color: rgb(236, 236, 236);
+    border: none;
+}
+
+#form-add-comment__comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    resize: none;
+    width: 100%;
+    height: 100px;
+    border: none;
+    background-color: rgb(236, 236, 236);
+}
+.form-add-comment__comment-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+
+/* FORM */
+
+.form__submit-button {
+    border: 0;
+    background-color: rgb(40, 138, 40);
+    font-size: 15px;
+    padding: 5px 15px;
+    margin-top: 10px;
+    color: white;
+    font-weight: 400;
+}
+
+.form__submit-button:hover {
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.form__alternative_button {
+    padding: 3px 0px 1px 0px;
+    text-decoration: none;
+    color: black;
+    border: 1px green solid;
+    text-align: center;
+}
+
+.form__alternative_button:hover {
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+
+
+
+/* INTRO */
+
+.intro {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    background: url('/../media/intro3.png') center no-repeat;
+    background-size: cover;
+}
+
+.intro__title {
+    font-size: 65px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+    max-width: 650px;
+}
+
+.intro__button {
+    text-decoration: none;
+    background-color: rgb(41, 156, 41);
+    margin-left: 50px;
+    padding: 10px 15px;
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.intro__button:hover {
+    position: relative;
+    left: -5px;
+    margin-top: -10px;
+    border: rgb(0, 0, 0) 5px solid;
+}
+
+
+
+
+/* AUTHORIZATION */
+
+.form__inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form__field {
+    justify-content: space-between;
+    display: flex;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.login-form {
+    max-width: 700px;
+    box-shadow: 0px 0px 50px 3px rgba(55, 57, 59, 0.25);
+    padding: 20px;
+}
+
+.login__inner {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-form {
+    max-width: 700px;
+    box-shadow: 0px 0px 50px 3px rgba(55, 57, 59, 0.25);
+    padding: 20px;
+}
+
+.registration__inner {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__go-registration-button {
+    margin-top: 10px;
+}
+
+.registration__go-login-button {
+    margin-top: 10px;
+}
+
+
+/* NOTIFICATION */
+
+.notification {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    max-height: 300px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 0px 50px 3px rgba(55, 57, 59, 0.25);
+}
+
+.notification::after {
+    content: "";
+    background-color: rgb(15, 77, 0);
+    height: 5px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    
+}
+
+
+.notification__text {
+    font-size: 20px;
+}
+
+.notification {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+  
+.notification_hidden {
+    opacity: 0;
+}
+
+
+/* CHAT */
+
+.chat__messages {
+    padding: 10px;
+    margin: 10px 0px;
+    border: black 1px solid;
+    width: 100%;
+    height: 70vh;
+    overflow: auto;
+    background-color: #eeffeb;
+}
+
+.chat__message_private {
+    color:rgb(0 92 6);
+}
+
+.chat__message_failed {
+    color:rgb(161 0 0);
+}
+
+.chat__message {
+    word-wrap: break-word;
+}
+
+.chat__send {
+    display: flex;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.chat__message-input {
+    height: 25px;
+    flex-grow: 1;
+}
+
+.chat__send-button {
+    border: 0;
+    background-color: rgb(40, 138, 40);
+    font-size: 15px;
+    padding: 4px 15px;
+    color: white;
+    font-weight: 400;
+}
+
+.chat__send-button:hover {
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+
+
+/* PROFILE */
+
+.profile-header {
+    height: 300px;
+}
+
+.profile-header__img-container {
+    height: 100%;
+}
+
+.profile-header__img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.profile-main {
+    padding: 30px;
+}
+
+.profile-main__info {
+    display: flex;
+}
+
+.profile-main__info-block {
+    flex-grow: 1;
+}
+.profile-main__title {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.profile-main__title {
+    padding-bottom: 10px;
+}
+
+.profile-main__user-info {
+    padding: 10px;
+    font-size: 18px;
+
+}
+
+.profile-main__posts {
+    margin-top: 40px;
+}
+
+.posts__add-post {
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+
+}
+
+.profile-main__current-info {
+    padding: 0 90px;
+}
+
+.profile-main__change-main-info {
+    padding: 0 90px;
+}
+
+.profile-main__change-password {
+    margin-top: 40px;
+    padding: 0 90px;
+}
+
+.change-profile-info-form__label {
+    font-size: 18px;
+}
+
+.change-profile-info-form__block {
+    margin: 5px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.change-profile-password-form__block {
+    margin: 5px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.change-profile-password-form__submit {
+    margin: 0 50px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.change-profile-info-form__submit {
+    margin: 0 50px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+
+
+
+/* RECIPE ADD FORM */
+
+.general-input {
+    margin: 0 30px;
+}
+
+.general-input__title-input {
+    padding: 7px 15px;
+    width: 100%;
+    font-size: 26px;
+    border: none;
+    background-color:rgb(236, 248, 233);
+    border-bottom: 2px solid rgb(145, 180, 142);
+    margin-bottom: 25px;
+    transition: 0.3s all;
+}
+
+.general-input__desctiption-input {
+    padding: 7px 15px;
+    resize: none;
+    border: none;
+    background-color:rgb(236, 248, 233);
+    font-size: 20px;
+    width: 100%;
+    height: 120px;
+    transition: 0.3s all;
+}
+
+.general-input__desctiption-input:focus {
+    outline: none;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.general-input__title-input:focus {
+    outline: none;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+
+.section-input {
+    padding: 30px;
+}
+
+.section-input__title {
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.section-input__section {
+    margin-bottom: 25px;
+}
+
+.section-input__section-inner {
+    display: flex;
+}
+
+.section-input__number {
+    padding-top: 15px;
+    width: 30px;
+    font-size: 36px;
+}
+
+.section-input__text {
+    flex-grow: 1;
+}
+
+.section-input__textarea {
+    padding: 7px 15px;
+    resize: none;
+    border: none;
+    background-color:rgb(236, 248, 233);
+    font-size: 20px;
+    width: 100%;
+    height: 120px;
+    resize: none;
+    transition: 0.3s all;
+}
+
+.section-input__textarea:focus {
+    outline: none;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.section-input__delete {
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+    align-self: center;
+}
+
+.section-input__delete-button {
+    padding-top: -25px;
+    font-size: 50px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: 0.3s all;
+}
+
+.section-input__delete-button::after {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 4px;
+    background-color: black;
+    margin-left: 5px;
+}
+
+.section-input__delete-button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+.section-input__file {
+    padding-left: 30px;
+}
+
+.add-section {
+    display: flex;
+    justify-content: center;
+}
+
+.add-section__button {
+    margin: 0 30px;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+}
+
+.addrecipe-form__submit {
+    display: flex;
+    justify-content: center;
+
+}
+
+.addrecipe-form__submit-button {
+    height: 35px;
+}
+
+.addrecipe-form {
+    padding-bottom: 30px;
+}
+
+.img-input__file {
+    padding: 5px 30px;
+}

@@ -23,7 +23,6 @@ class Controller_Recipe extends Controller
         $data = Meta::add_meta_data($data, $data["article"]["title"], null, null);
         $this->view->generate('recipe_view.php', 'template_view.php', $data);
     }
-
     
 	function action_add_ingredients()
 	{

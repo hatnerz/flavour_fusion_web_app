@@ -15,7 +15,7 @@ class Model_Recipes extends Model
 
 	public function get_data()
 	{	
-        $recipes_count = 10;
+        $recipes_count = 9;
         $categories = DB::do_sql_select("SELECT * FROM `category`");
         $categories_array = DB::convert_result_to_array($categories);
         if($this->filter_id == 1)
