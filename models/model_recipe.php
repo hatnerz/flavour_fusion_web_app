@@ -44,6 +44,11 @@ class Model_Recipe extends Model
             array($article, $ingredients, $comments));
 	}
 
+    public function add_view()
+    {
+        DB::do_sql("UPDATE `recipe` SET `views` = `views` + 1 WHERE `recipe_id` = ?", array($this->recipe_id));
+    }
+
     public function add_comment()
     {
         $username = $_POST["username"];
