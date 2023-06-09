@@ -985,3 +985,188 @@ h1 {
 .img-input__file {
     padding: 5px 30px;
 }
+/* CONTACT FORM */
+
+.contact__info {
+    display: flex;
+    gap: 20px;
+    max-width: 90%;
+    justify-content: center; 
+    align-items: center;
+    margin: 0 auto; 
+}
+
+.text-cont-inf{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+     color: #333;
+
+}
+  .contact__item {
+    text-align: center;
+    flex-basis: 50%;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .contact__item h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px; 
+    margin-top: 10px; 
+    color: #333;
+}
+
+.contact__item p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 5px; 
+    color: #666;
+}
+  .contact__item i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #888;
+  }
+  .about__us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about__us h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.about__us p {
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #666;
+}
+
+.contact__item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+.mainbutton button {
+    background-color: rgb(77, 90, 77);
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center;
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 4px;
+}
+.mainbutton button:hover {
+    background-color: rgb(77, 77, 77);
+}
+.mainbutton {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap:70px
+}
+.buttonAdress{
+    margin-top: 30px;
+    margin-left: 100px;
+}
+.buttonEmail{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.buttonPhone{
+    margin-top: 30px;
+    margin-right: 105px;
+}
+.messageBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.phoneInputContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: none;
+}
+
+.phoneInputBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.phoneInputBox p {
+    margin-bottom: 10px;
+}
+
+.phoneInputBox input {
+    margin-bottom: 50px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+.phoneInputBox p {
+    margin-top: 40px;
+}
+.sendButton{
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+    .mainbutton {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .buttonAdress{
+        margin-top: -30px;
+        margin-left: 10px;
+    }
+    .buttonEmail{
+        margin-top: -30px;
+        margin-left: 40px;
+        width: 200px;
+
+    }
+    .buttonPhone {
+      margin-top: -10px;
+      margin-left: 110px;
+    }
+    .about__us p{
+        font-size: 22px;
+    }
+  }

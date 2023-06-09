@@ -72,7 +72,7 @@ class PageTemplate
             <div class="container">
                 <div class="nav__inner">
                     <div class="nav__main-menu">
-                        <?php $menu_elements = [["Головна", "/main"], ["Рецепти", "/recipes"], ["Чат", "/chat"], ["Контакти", "#"]];
+                        <?php $menu_elements = [["Головна", "/main"], ["Рецепти", "/recipes"], ["Чат", "/chat"], ["Контакти", "/contact"]];
                             for($i = 0; $i < count($menu_elements); $i++)
                             {?>
                                 <div class = "main-menu__element <?php if($i == 0) echo "main-menu__element_first"; 
