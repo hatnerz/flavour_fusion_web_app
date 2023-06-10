@@ -1,4 +1,6 @@
 <section class="login">
+      <div class="login__inner">
+        <form class="form login-form" method="post" action="/login/check">
             <div class="form__inner">
                 <h2 class="form__title">Авторизація</h2>
                 <div class="form__fields">
