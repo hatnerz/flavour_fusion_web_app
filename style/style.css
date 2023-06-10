@@ -835,155 +835,165 @@ h1 {
     margin-top: 20px;
     width: 100%;
 }
-
-
-
-
-
 /* RECIPE ADD FORM */
-
-.general-input {
-    margin: 0 30px;
+.title h1 {
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: center;
 }
-
-.general-input__title-input {
-    padding: 7px 15px;
+.general-input__title-input,
+.general-input__desctiption-input,.section-input__textarea{
+    background-color:#F4FFF3;
+}
+.general-input__title-input,
+.general-input__desctiption-input,
+#duration-input__input,
+#complexity-input__input {
     width: 100%;
-    font-size: 26px;
-    border: none;
-    background-color:rgb(236, 248, 233);
-    border-bottom: 2px solid rgb(145, 180, 142);
-    margin-bottom: 25px;
-    transition: 0.3s all;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
+.general-input__desctiption-input{
+    background-color:#F4FFF3;
+    height: 200px;
 
-.general-input__desctiption-input {
-    padding: 7px 15px;
-    resize: none;
-    border: none;
-    background-color:rgb(236, 248, 233);
-    font-size: 20px;
-    width: 100%;
-    height: 120px;
-    transition: 0.3s all;
 }
+.file-input-label {
+    margin-bottom: 10px;
 
-.general-input__desctiption-input:focus {
-    outline: none;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
+.file-input-label1 {
+    margin-bottom: 10px;
+    margin-left:35px;
+    background-color: #f7f7f7; 
 
-.general-input__title-input:focus {
-    outline: none;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
-
-
-.section-input {
-    padding: 30px;
+.section-input__textarea{
+    width: 98%;
+    height: 200px;
 }
-
-.section-input__title {
-    margin-top: 35px;
-    margin-bottom: 20px;
+.duration-input,
+.complexity-input,
+.category-input,
+.section-input,
+.add-section,
+.addrecipe-form__submit {
+    padding: 5px 30px;
 }
 
 .section-input__section {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f7f7f7; 
 }
 
 .section-input__section-inner {
     display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .section-input__number {
-    padding-top: 15px;
-    width: 30px;
-    font-size: 36px;
-}
-
-.section-input__text {
-    flex-grow: 1;
-}
-
-.section-input__textarea {
-    padding: 7px 15px;
-    resize: none;
-    border: none;
-    background-color:rgb(236, 248, 233);
-    font-size: 20px;
-    width: 100%;
-    height: 120px;
-    resize: none;
-    transition: 0.3s all;
-}
-
-.section-input__textarea:focus {
-    outline: none;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-}
-
-.section-input__delete {
-    height: 30px;
-    width: 30px;
-    margin-left: 20px;
-    align-self: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 10px;
 }
 
 .section-input__delete-button {
-    padding-top: -25px;
-    font-size: 50px;
-    width: 100%;
-    height: 100%;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
     border: none;
-    transition: 0.3s all;
-}
-
-.section-input__delete-button::after {
-    content: " ";
-    display: block;
-    width: 20px;
-    height: 4px;
-    background-color: black;
-    margin-left: 5px;
-}
-
-.section-input__delete-button:hover {
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
     cursor: pointer;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 }
-
-.section-input__file {
-    padding-left: 30px;
+.section-input__delete-button::before {
+    content: "-";
+    display: block;
+    text-align: center;
+    line-height: 30px;
 }
-
-.add-section {
-    display: flex;
-    justify-content: center;
-}
-
-.add-section__button {
-    margin: 0 30px;
-    padding: 10px 20px;
-    margin-bottom: 30px;
-}
-
-.addrecipe-form__submit {
-    display: flex;
-    justify-content: center;
-
-}
-
-.addrecipe-form__submit-button {
-    height: 35px;
-}
-
-.addrecipe-form {
-    padding-bottom: 30px;
-}
-
+.section-input__file,
 .img-input__file {
-    padding: 5px 30px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.section-input__file .file-input-label,
+.img-input__file .file-input-label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+}
+.section-input_file-input1{
+    width: 95%;
+    margin-left:30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.section-input__file .section-input_file-input,
+.img-input__file .section-input_file-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-section__button,
+.addrecipe-form__submit-button {
+    font-size: 16px;
+    background-color: #333; 
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; 
+    margin-bottom:20px;
+}
+.add-section__button{
+    padding: 12px 23px;
+
+}
+.addrecipe-form__submit-button {
+    padding: 12px 20px;
+
+}
+.section-input__text {
+    flex-grow: 1;
+}
+.general-input__title-input,
+.general-input__desctiption-input {
+    width: 95%;
+    margin-left:30px;
+
+}
+.category-input select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.section-input__title h2{
+font-size: 25px;
 }
 /* CONTACT FORM */
 
