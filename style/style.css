@@ -290,7 +290,7 @@ h1 {
 .posts__item {
     box-shadow: 0px 0px 50px 3px rgba(7, 28, 75, 20%);
     flex-grow: 1;
-    min-width: 200px;
+    min-width: 380px;
     max-width: 380px;
     transition: all 0.3s;
 }

@@ -60,6 +60,16 @@
                 
             </section>
 
+            <section  class="statistics">
+                <div class="statistics__author">Автор: <?= $author == null ? "невідомо" : $author[0]["login"]?></div>
+                <a style = "text-decoration:none" href="/recipe/change_like/<?=$article["recipe_id"]?>">
+                    <div style="font-size: 20px" class="statistics__likes <?= $has_user_like ? "statistic__likes_liked" : "statistic__likes_unliked" ?>">
+                        ♡ <?php print_r($likes["COUNT(`like_id`)"]) ?>
+                    </div>
+                </a>
+                    <div style="font-size: 20px" class="statistics__views">👁 <?=$article["views"]?></div>
+            </section>
+
             <section class="comments">
 
                 <div class="comments__title">

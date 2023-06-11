@@ -6,7 +6,7 @@
                     <h1>Рецепти</h1>
                 </div>
                 <div class="title__subtitle">
-                    Тільки найращі рецепти
+                    Тільки найкращі рецепти
                 </div>
             </div>
             <div class="categories">
@@ -24,6 +24,10 @@
             </div>
             <div class="posts">
                 <?php
+                if (count($recipes_array) == 0) {
+                    echo "Нічого не знадено";
+                }
+                else {
                 foreach($recipes_array as $recipe) 
                 {?>
                     <div class="posts__item">
@@ -39,16 +43,15 @@
                                 </div>
                                 <div class="post__additional-info">
                                     <div class="post__stats">
-                                        <div class="post-info post-info__likes">♡ 0</div>
                                         <div class="post-info post-info__comments">👁 <?=$recipe["views"]?></div>
                                     </div>
-                                    <div class="post-info date"><?=$recipe["date"]?></div>
+                                    <div class="post-info date"><?php echo date("d.m.Y H:i", strtotime($recipe["date"])); ?></div>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <?php
-                }?>
+                } }?>
             </div>
             <div class="pages-list">
                 <?php for ($i = 1; $i <= $pages_count; $i++) 
