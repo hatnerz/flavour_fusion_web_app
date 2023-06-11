@@ -60,14 +60,20 @@
                 
             </section>
 
-            <section  class="statistics">
-                <div class="statistics__author">Автор: <?= $author == null ? "невідомо" : $author[0]["login"]?></div>
+            <section class="statistics">
+                <div style="display: flex; gap: 25px"> 
+
                 <a style = "text-decoration:none" href="/recipe/change_like/<?=$article["recipe_id"]?>">
-                    <div style="font-size: 20px" class="statistics__likes <?= $has_user_like ? "statistic__likes_liked" : "statistic__likes_unliked" ?>">
-                        ♡ <?php print_r($likes["COUNT(`like_id`)"]) ?>
+                    <div style="font-size: 24px" class="statistics__likes <?= $has_user_like ? "statistic__likes_liked" : "statistic__likes_unliked" ?>">
+                        <span class="statistics__like">♡</span> <?php print_r($likes["COUNT(`like_id`)"]) ?>
                     </div>
                 </a>
-                    <div style="font-size: 20px" class="statistics__views">👁 <?=$article["views"]?></div>
+                <div style="font-size: 24px" class="statistics__views">👁 <?=$article["views"]?></div>
+
+               </div>
+
+                <div class="statistics__author">Автор рецепта: <?= $author == null ? "невідомо" : $author[0]["login"]?></div>
+                
             </section>
 
             <section class="comments">

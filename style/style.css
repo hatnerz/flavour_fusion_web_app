@@ -290,7 +290,7 @@ h1 {
 .posts__item {
     box-shadow: 0px 0px 50px 3px rgba(7, 28, 75, 20%);
     flex-grow: 1;
-    min-width: 380px;
+    width: 380px;
     max-width: 380px;
     transition: all 0.3s;
 }
@@ -448,9 +448,32 @@ h1 {
     padding-left: 30px;
 }
 
+/* STATISTICS (POST) */
+
+.statistics {
+    padding: 0 30px 30px 30px;
+}
+
+.statistics__likes {
+    margin-bottom: 10px;
+}
+
+.statistic__likes_unliked {
+    color: gray
+}
+
+.statistic__likes_liked {
+    color: red;
+}
 
 
-/* COMMENTS */
+.statistics__like {
+    font-weight: 1000;
+    font-size: 24px;
+}
+
+
+/* COMMENTS (POST) */
 
 .comments {
     padding: 0px 30px 30px 30px;
@@ -743,9 +766,6 @@ h1 {
 /* RECIPE ADD FORM */
 .title h1 {
     margin: 0;
-    font-size: 30px;
-    margin-bottom: 10px;
-    text-align: center;
 }
 .general-input__title-input,
 .general-input__desctiption-input,.section-input__textarea{
@@ -915,7 +935,7 @@ font-size: 25px;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-     color: #333;
+     color: #000000;
 
 }
   .contact__item {
@@ -952,22 +972,22 @@ font-size: 25px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 30px 20px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
 .about__us h2 {
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 10px;
-    color: #333;
+    color: #000000;
 }
 
 .about__us p {
-    font-size: 25px;
+    font-size: 22px;
     margin-bottom: 10px;
     text-align: center;
-    color: #666;
+    color: #000000;
 }
 
 .contact__item:hover {

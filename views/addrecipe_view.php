@@ -19,26 +19,28 @@
                         <label for="img-input_file-input" class="file-input-label1">Зображення рецепта</label>
                         <input required name="img-input_file" id="img-input_file-input" type="file" class="section-input_file-input1" accept=".jpg, .png, .jpeg">
                     </div>
+                    <div style = "display: flex;">
+                        <div style = "flex-grow: 1" class="duration-input">
+                            <label for="duration-input__input">Час приготування (хв)</label>
+                            <input min="0" max="600" required name="duration" id="duration-input__input" type="number">
+                        </div>
 
-                    <div class="duration-input">
-                        <label for="duration-input__input">Час приготування (хв)</label>
-                        <input min="0" max="100" required name="duration" id="duration-input__input" type="number">
-                    </div>
+                        <div style = "flex-grow: 1"  class="complexity-input">
+                            <label for="complexity-input__input">Складність приготування</label>
+                            <input min="1" max="5" required name="complexity" id="complexity-input__input" type="number">
+                        </div>
 
-                    <div class="complexity-input">
-                        <label for="complexity-input__input">Складність приготування</label>
-                        <input min="1" max="5" required name="complexity" id="complexity-input__input" type="number">
+                        <div style = "flex-grow: 1"  class="category-input">
+                            <p>Категорія</p>
+                            <select required name="category">
+                                <option value="" selected>Оберіть категорію</option>
+                                <?php foreach ($categories as $category) { ?>
+                                    <option value="<?= $category["category_id"] ?>"><?= $category["name"] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
                     </div>
-
-                    <div class="category-input">
-                        <p>Категорія</p>
-                        <select required name="category">
-                            <option value="" selected>Оберіть категорію</option>
-                            <?php foreach ($categories as $category) { ?>
-                                <option value="<?= $category["category_id"] ?>"><?= $category["name"] ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                    
 
                     <div class="section-input">
                         <div class="section-input__title">

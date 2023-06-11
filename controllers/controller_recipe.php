@@ -19,9 +19,9 @@ class Controller_Recipe extends Controller
     }
     function action_list()
     {
+        $this->model->add_view();
         $data = $this->model->get_data();
         $data = Meta::add_meta_data($data, $data["article"]["title"], null, null);
-        $this->model->add_view();
         $this->view->generate('recipe_view.php', 'template_view.php', $data);
     }
     
@@ -43,14 +43,16 @@ class Controller_Recipe extends Controller
 
     function action_change_like()
     {
-        $data = array();
+        $data = $this->model->get_data();
         $data = Meta::add_meta_data($data, "", null, null);
         if($data['user'] == null) {
-            $data = $this->model->get_data();
             $data = Meta::add_meta_data($data, $data["article"]["title"], null, "Для того, щоб вставити лайки, потрібно авторизуватися");
+            $this->view->generate('recipe_view.php', 'template_view.php', $data);
         }
         else {
-            $data = $this->model->get_data();
+            $this->model->change_like($data['user']->id, $data['has_user_like']);
+            header("Location: ".$_SERVER['HTTP_REFERER']);
+            exit();
         }
     }
 }

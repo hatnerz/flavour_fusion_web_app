@@ -115,4 +115,44 @@ class Controller_Profile extends Controller
         }
 
     }
+
+    function action_uploadimg()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
+            $data = array();
+            $data = Meta::add_meta_data($data, "Завантаження фото", null, null);
+            if($data['user'] != null) {
+
+                // Проверка, является ли файл изображением (можете настроить проверку в зависимости от своих требований)
+                $originalFileName = $_FILES['file']['name'];
+                $extension = strtolower(pathinfo($originalFileName, PATHINFO_EXTENSION));
+                $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif');
+                if (!in_array($extension, $allowedExtensions)) {
+                    echo 'Ошибка: Можно загружать только изображения в форматах JPG, JPEG, PNG или GIF.';
+                    exit();
+                }
+
+                $targetDir = MEDIA_PATH.'profile_img/'; // Папка, в которую нужно сохранить файлы
+
+                $newFileName = ((string)$data['user']->id). '.' .$extension;
+                $targetFile = $targetDir . $newFileName;
+
+                // Перемещение файла из временной директории в целевую папку
+                if (move_uploaded_file($_FILES['file']['tmp_name'], $targetFile)) {
+                    DB::do_sql("UPDATE `user` SET `profile_img` = ? WHERE `user_id` = ?", array($newFileName, $data['user']->id));
+                    echo 'Фото профіля успішно змінено';
+                } else {
+                    echo 'Помилка при завантаженні файлу';
+                }
+            }
+            else
+            {
+                echo "Помилка: ви повинні бути авторизовані";
+            }
+            
+        } else {
+            echo 'Помилка: некоректний запит';
+            exit();
+        }
+    }
 }

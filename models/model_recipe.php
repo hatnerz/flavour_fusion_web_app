@@ -45,13 +45,13 @@ class Model_Recipe extends Model
         $user_login = null;
         if(isset($_SESSION["user"]))
         {
-            $login = $_SESSION["user"];
+            $user_login = $_SESSION["user"];
         }
 
         $has_user_like = false;
         if($user_login != null)
         {
-            $result = DB::do_sql_select("SELECT * FROM `like` WHERE `user_id` = (SELECT `user_id` FROM `user` WHERE `login` = ?)", array($user_login));
+            $result = DB::do_sql_select("SELECT * FROM `like` WHERE `recipe_id` = ? AND `user_id` = (SELECT `user_id` FROM `user` WHERE `login` = ?)", array($this->recipe_id, $user_login));
             if(mysqli_num_rows($result) > 0)
                 $has_user_like = true;
         }
@@ -61,6 +61,8 @@ class Model_Recipe extends Model
         {
             $author = DB::convert_result_to_array(DB::do_sql_select("SELECT * FROM `user` WHERE `user_id` = ?", array($article['user_ID'])));
         }
+    
+
         return array_combine(
             array("article", "ingredients", "comments", "likes", "has_user_like", "author"),
             array($article, $ingredients, $comments, $likes, $has_user_like, $author));
@@ -81,9 +83,16 @@ class Model_Recipe extends Model
         return $result;
     }
 
-    public function changelike()
+    public function change_like($user_id, $has_like)
     {
-        
+        if($has_like) {
+            DB::do_sql("DELETE FROM `like` WHERE `user_id` = ? AND `recipe_id` = ?", array($user_id, $this->recipe_id));
+        }
+        else {
+            $date = date("Y-m-d H:i:s");
+            echo $date;
+            DB::do_sql("INSERT INTO `like`(`recipe_id`,`user_id`,`date`) VALUES(?, ?, ?)", array($this->recipe_id, $user_id, $date));
+        }
     }
 
 }

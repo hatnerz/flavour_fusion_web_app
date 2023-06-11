@@ -8,9 +8,11 @@
         <div class="profile-image">
           <input type="file" id="profile-photo-input" style="display: none" accept="image/*">
           <label for="profile-photo-input" class="profile-photo-label">
-            <img src="/../media/prof.png" alt="profile image" class="profile-image">
+            <img src=<?= $user->profile_img == "" ? "/media/prof.png" : "/media/profile_img/".$user->profile_img?> alt="profile image" class="profile-image">
           </label>
-        </div>
+          </div>
+          <p class="profile-image__help-text">Для завантаження (оновлення) фото профілю натисніть на нього</p>
+        
       </div>
       <div class="profile-main">
         <div class="profile-main__title">
@@ -76,9 +78,9 @@
                 </div>
               </form>
             </div>
-            <div class="profile-main__authentication">
+          </div>
+          <div class="profile-main__authentication">
               <button onclick="logOut()" class="posts__add-post form__submit-button">Вийти з аккаунту</button>
-            </div>
           </div>
         </div>
       </div>
@@ -142,10 +144,13 @@
     flex-basis: 100%;
     background-color: #ffffff;
     padding: 20px;
-    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-main__change-info {
+    margin: 0 20px;
   }
 
   .posts__add-post,
@@ -164,9 +169,20 @@
     background-color: #006400;
   }
 
+  .profile-main__change-info {
+    display: flex;
+    gap: 40px;
+  }
+
+  .profile-image__help-text {
+    text-align: right;
+  }
+
+
   .profile-main__change-main-info,
   .profile-main__change-password {
     margin-bottom: 20px;
+    flex-grow: 1;
   }
 
   .change-profile-info-form__label {
@@ -193,10 +209,17 @@
     border-radius: 5px;
   }
 
-  .profile-main__change-info .posts__add-post,
-  .profile-main__change-password .posts__add-post {
+  .profile-main__authentication {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+
+  .profile-main__authentication .posts__add-post {
     background-color: #dc3545;
     padding: 10px 31px;
+    margin: 15px;
+
   }
 
   .change-profile-password-form__submit {
@@ -281,6 +304,19 @@
     if (file) {
       reader.readAsDataURL(file);
     }
+
+    var formData = new FormData();
+    formData.append("file", file);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/profile/uploadimg", true)
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+        console.log("Файл успешно загружен на сервер");
+        } else {
+        console.log("Произошла ошибка при загрузке файла");
+        }
+    };
+    xhr.send(formData);
   }
 
   document.querySelector("#profile-photo-input").addEventListener("change", handleProfilePhotoUpload);

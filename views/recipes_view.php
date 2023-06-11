@@ -6,7 +6,7 @@
                     <h1>Рецепти</h1>
                 </div>
                 <div class="title__subtitle">
-                    Тільки найкращі рецепти
+                    Створюй кулінарші шедеври разом з нами!
                 </div>
             </div>
             <div class="categories">
