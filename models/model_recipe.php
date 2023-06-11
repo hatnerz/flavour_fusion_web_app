@@ -38,10 +38,32 @@ class Model_Recipe extends Model
         WHERE `comment`.`recipe_id` = ?
         ORDER BY `comment`.`date` DESC ", array($this->recipe_id));
         $comments = DB::convert_result_to_array($comments_select);
+        
+        $likes_select = DB::do_sql_select("SELECT COUNT(`like_id`) FROM `like` WHERE `recipe_id` = ?", array($this->recipe_id));
+        $likes = DB::convert_result_to_array($likes_select)[0];
 
+        $user_login = null;
+        if(isset($_SESSION["user"]))
+        {
+            $login = $_SESSION["user"];
+        }
+
+        $has_user_like = false;
+        if($user_login != null)
+        {
+            $result = DB::do_sql_select("SELECT * FROM `like` WHERE `user_id` = (SELECT `user_id` FROM `user` WHERE `login` = ?)", array($user_login));
+            if(mysqli_num_rows($result) > 0)
+                $has_user_like = true;
+        }
+
+        $author = null;
+        if($article['user_ID'] != null && $article['user_ID'] != "")
+        {
+            $author = DB::convert_result_to_array(DB::do_sql_select("SELECT * FROM `user` WHERE `user_id` = ?", array($article['user_ID'])));
+        }
         return array_combine(
-            array("article", "ingredients", "comments"),
-            array($article, $ingredients, $comments));
+            array("article", "ingredients", "comments", "likes", "has_user_like", "author"),
+            array($article, $ingredients, $comments, $likes, $has_user_like, $author));
 	}
 
     public function add_view()
@@ -57,6 +79,11 @@ class Model_Recipe extends Model
             return false;
         $result = DB::do_sql("INSERT INTO `comment`(`recipe_id`, `username`, `text`) VALUES(?,?,?)", array($this->recipe_id, $username, $comment));
         return $result;
+    }
+
+    public function changelike()
+    {
+        
     }
 
 }

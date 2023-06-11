@@ -40,4 +40,17 @@ class Controller_Recipe extends Controller
         header("Location: ".$_SERVER['HTTP_REFERER']);
         exit();
     }
+
+    function action_change_like()
+    {
+        $data = array();
+        $data = Meta::add_meta_data($data, "", null, null);
+        if($data['user'] == null) {
+            $data = $this->model->get_data();
+            $data = Meta::add_meta_data($data, $data["article"]["title"], null, "Для того, щоб вставити лайки, потрібно авторизуватися");
+        }
+        else {
+            $data = $this->model->get_data();
+        }
+    }
 }
