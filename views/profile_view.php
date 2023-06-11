@@ -32,10 +32,14 @@
                 Прізвище: <?= $user->last_name ?>
               </div>
             </div>
+            <?php if ($user->role_id == 1) {?>
             <div class="profile-main__posts">
               <h2 class="profile-main__subtitle">Статті та рецепти</h2>
               <button onclick="redirectToPage()" class="posts__add-post form__submit-button">Додати статтю</button>
             </div>
+            <?php } ?>
+
+
           </div>
           <div class="profile-main__change-info profile-main__info-block">
             <div class="profile-main__change-main-info">

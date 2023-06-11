@@ -11,7 +11,7 @@
                             <input required class="general-input__title-input" name="title" type="text" placeholder="Назва рецепту">
                         </div>
                         <div class="general-input__description">
-                            <textarea required placeholder="Опис" class="general-input__desctiption-input" name="description"></textarea>
+                            <textarea required style="resize:none" placeholder="Опис" class="general-input__desctiption-input" name="description"></textarea>
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@
                                         <textarea required name="section-input_text[]" class="section-input__textarea"></textarea>
                                     </div>
                                     <div class="section-input__delete">
-                                        <button class="section-input__delete-button"></button>
+                                        <button type="button" onclick="() => deleteSection(0)" class="section-input__delete-button"></button>
                                     </div>
                                 </div>
                             </div>

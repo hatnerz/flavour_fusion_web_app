@@ -9,10 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
       sectionContainer.appendChild(newSection);
     });
 
+
+    var section1 = document.getElementById('section1');
+    var deleteButton = section1.querySelector(".section-input__delete-button");
+    deleteButton.addEventListener('click', function () { 
+        deleteSection(1);
+    })
+
     function createSection() {
       var section = document.createElement('div');
       section.className = 'section-input__section';
-        sectionCount+=1;
+      sectionCount+=1;
       // Генерируем уникальный id для секции
       var sectionId = 'section' + sectionCount;
       section.setAttribute('id', sectionId);
@@ -28,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <textarea required name = "section-input_text[]" class="section-input__textarea"></textarea>
                 </div>
                 <div class="section-input__delete">
-                    <button class="section-input__delete-button"></button>
+                    <button type = "button" class="section-input__delete-button"></button>
                 </div>
             </div>
         </div>
@@ -37,7 +44,30 @@ document.addEventListener('DOMContentLoaded', function() {
             <input required name = "section-input_file[]" id = "section-input_file-input${sectionCount}" type="file" class="section-input_file-input" accept=".jpg, .png, .jpeg">
         </div>
       `;
-
+   
+      var deleteButton = section.querySelector(".section-input__delete-button");
+      deleteButton.addEventListener('click', deleteSection.bind(null, sectionCount));
       return section;
     }
+
+
+    function deleteSection(index) {
+        let sections = document.getElementsByClassName("section-input__section");
+        let change = false;
+        for(let section of sections) {
+            let sectionId = section.id;
+            if(sectionId == "section" + index) {
+                section.remove();
+                change = true;
+            }
+        }
+        sections = document.getElementsByClassName("section-input__section");
+        for(let i = 0; i < sections.length; i++) {
+            var sectionNumber = sections[i].querySelector(".section-input__number");
+            sectionNumber.innerHTML = i+1;
+        }
+        sectionCount--;
+      }
+
   });
+

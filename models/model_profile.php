@@ -36,5 +36,10 @@ class Model_Profile extends Model{
             return ERROR;
     }
 
+    public function change_profile_img() 
+    {
+        
+    }
+
     
 }
